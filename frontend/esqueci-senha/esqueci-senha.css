@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 body,
 html {
     position: absolute;
@@ -5,6 +10,7 @@ html {
     height: 100%;
     padding: 0px;
     margin: 0px;
+    background-color: #F0FCFD;
     font-family: "Inter", sans-serif;
 }
 
@@ -73,12 +79,23 @@ footer {
 }
 
 .inputs {
+    font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: row;
     vertical-align: middle;
     height: auto;
     padding: 1vh;
+    width: 60%;
+    border-radius: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 1px solid #3C98A4;
 }
+
+.inputs::placeholder{
+    color: black;
+}
+
 
 .body-container {
     display: flex; /* Ativa Flexbox no container */
@@ -100,12 +117,14 @@ footer {
     justify-content: center;
 }
 .telas {
+    font-family: "Inter", sans-serif;
     position: relative;
+    color: #3C98A4;
     display: flex;
     flex-direction: column; /* Mantém o alinhamento dos itens em uma coluna */
-    justify-content: center; /* Centraliza os itens verticalmente */
+    margin-top: 20vh;
     align-items: center; /* Alinha os itens horizontalmente */
-    gap: 20px; /* Espaçamento entre os blocos */
+    gap: 5px; /* Espaçamento entre os blocos */
     width: 100%; /* Largura total do container */
     height: 100vh; /* Altura total da viewport para centralizar verticalmente */
     z-index: 0;
@@ -113,7 +132,8 @@ footer {
 
 h1{
     font-family: "Inter", sans-serif;
-    color: #e60060bf !important;
+    color: #3C98A4 !important;
+    font-size: 3vh;
 }
 
   
@@ -130,10 +150,28 @@ h1{
     display: flex; /* Necessário para ativar o Flexbox */
     border-radius: 10px; /* Bordas arredondadas */
     background: linear-gradient(to right, #E078A4BF, #F71273BF);
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
     height: 8vh; /* Define a altura como 8% da viewport */
     width: 90%; /* Defina uma largura fixa ou use porcentagem */
     color: white; /* Texto branco para melhor visibilidade */
     padding: 0 0 0 20px;
 }
+
+.redirects {
+    display: flex;
+    justify-content: space-between; /* Distribui os itens entre os extremos */
+    width: 60%; /* Garante que o container ocupe toda a largura disponível */
+}
+
+input[type="submit"]{
+    background-color: transparent;
+    border: transparent;
+    color: #3C98A4;
+}
+.redirects:hover {
+    cursor: pointer;
+  }
+
+  
+input[type="submit"]:hover {
+    cursor: pointer;
+  }
