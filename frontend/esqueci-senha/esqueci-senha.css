@@ -126,7 +126,6 @@ footer {
     align-items: center; /* Alinha os itens horizontalmente */
     gap: 5px; /* Espaçamento entre os blocos */
     width: 100%; /* Largura total do container */
-    height: 100vh; /* Altura total da viewport para centralizar verticalmente */
     z-index: 0;
 }
 
@@ -175,3 +174,15 @@ input[type="submit"]{
 input[type="submit"]:hover {
     cursor: pointer;
   }
+
+  #message {
+    display: none; /* Inicialmente escondido */
+    border: 2px solid red;
+    width: 80%;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin-bottom: ;
+}

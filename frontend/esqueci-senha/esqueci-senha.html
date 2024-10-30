@@ -27,8 +27,22 @@
                 </a>    
                 <input type="submit" id="submit" value="Enviar">
             </div>
+            <br>
+            <br>
+            <br>
+            <div id="message">
+                Se houver um email cadastrado com esses dados, enviaremos uma solicitação de uma nova senha.
+            </div>
+
         </div>
         <footer class="footer"></footer>
     </div>
+
+    <script>
+        document.getElementById('submit').onclick = function() {
+            document.getElementById('message').style.display = 'flex'; // Exibir a mensagem
+        }
+    </script>
+
 </body>
 </html>
