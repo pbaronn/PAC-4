@@ -86,13 +86,6 @@ footer {
     padding: 1vh;
 }
 
-.body-container {
-    display: flex; /* Ativa Flexbox no container */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Alinha no topo, você pode mudar para center se quiser */
-    height: 100%; /* Ocupa toda a altura da tela */
-}
-
 .dados {
     position: relative;
     color: white;
@@ -113,7 +106,7 @@ footer {
     align-items: center; /* Alinha os itens horizontalmente */
     gap: 20px; /* Espaçamento entre os blocos */
     width: 100%; /* Largura total do container */
-    height: 100vh; /* Altura total da viewport para centralizar verticalmente */
+    height: 90vh; /* Altura total da viewport para centralizar verticalmente */
     z-index: 0;
 }
 

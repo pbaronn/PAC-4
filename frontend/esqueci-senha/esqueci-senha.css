@@ -3,6 +3,11 @@ a{
     color: inherit;
 }
 
+form{
+    position: relative;
+    gap:5px;
+}
+
 body,
 html {
     position: absolute;
@@ -78,14 +83,14 @@ footer {
     width: 100%;
 }
 
-.inputs {
+input[type="email"],input[type="password"] {
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: row;
     vertical-align: middle;
     height: auto;
     padding: 1vh;
-    width: 60%;
+    width: 100%;
     border-radius: 5px;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -183,6 +188,7 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #FFFFFF;
     color: black;
     margin-bottom: ;
 }
