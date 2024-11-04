@@ -20,7 +20,6 @@
             <h1>Esqueci minha senha</h1> 
             <form>
             <input type="email" required placeholder="Digite seu e-mail" class="inputs">
-            <input type="password" required placeholder="Digite sua senha" class="inputs">
             <br>
             <div class="redirects">
                 <a href="../login/login.html">
@@ -45,10 +44,9 @@
     
             // Obtém os valores dos campos de entrada
             const emailInput = document.querySelector('input[type="email"]');
-            const passwordInput = document.querySelector('input[type="password"]');
             
             // Verifica se ambos os campos estão preenchidos
-            if (emailInput.checkValidity() && passwordInput.checkValidity()) {
+            if (emailInput.checkValidity()) {
                 const messageDiv = document.getElementById('message');
                 messageDiv.style.display = 'flex'; // Exibir a mensagem
     

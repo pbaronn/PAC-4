@@ -1,0 +1,389 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+cadastrar-associadoa{ 
+    text-decoration:none;
+    color: inherit;
+}
+
+body,
+html {
+    background-color: #F0FCFD;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    position: absolute;
+    background-color: gainsboro;
+    height: 10vh;
+    width: 100%;
+    box-shadow: 0px 0px 10px black;
+    z-index: 1;
+    background-color: #3C98A4;
+}
+
+footer {
+    position: absolute;
+    background-color: gainsboro;
+    height: 40px;
+    width: 100%;
+    box-shadow: 0px 0px 10px black;
+    z-index: 1;
+    background-color: #3C98A4;
+}
+
+header {
+    top: 0px;
+}
+
+footer {
+    bottom: 0px;
+}
+
+#logo {
+    position: relative;
+    height: 10.5vh;
+    width: 8vh;
+    left: 6%;
+}
+
+.sair-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+
+#sair {
+    height: 3vh;
+    width: auto;
+    margin-right: 5px;
+}
+
+.sair-text {
+    font-size: 2.5vh;
+    color: white;
+}
+
+.usuario {
+    margin-top: 15vh;
+    background: linear-gradient(to top, #17303E, #3C98A4);
+    box-shadow: 0px 0px 10px black;
+    height: 15vh;
+    width: 100%;
+}
+.inputs {
+    position: relative;
+    gap: 2vh;
+    top: 0;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+.body-container {
+    display: flex; /* Ativa Flexbox no container */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha no topo, você pode mudar para center se quiser */
+    height: 100%; /* Ocupa toda a altura da tela */
+}
+
+.dados {
+    position: relative;
+    color: white;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foto-perfil {
+    justify-content: center;
+}
+.telas {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Mantém o alinhamento dos itens em uma coluna */
+    align-items: center; /* Alinha os itens horizontalmente */
+    top: 15vh;
+    gap: 20px; /* Espaçamento entre os blocos */
+    width: 100%; /* Largura total do container */
+    z-index: 0;
+}
+
+
+h1{
+    font-family: "Inter", sans-serif;
+    color: #e60060bf !important;
+}
+
+  
+.tela img{
+    position: relative;
+    width: 6vh;
+    height: 6vh;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.tela {
+    font-weight: bold;
+    display: flex; /* Necessário para ativar o Flexbox */
+    border-radius: 10px; /* Bordas arredondadas */
+    background: linear-gradient(to right, #E078A4BF, #F71273BF);
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 8vh; /* Define a altura como 8% da viewport */
+    width: 90%; /* Defina uma largura fixa ou use porcentagem */
+    color: white; /* Texto branco para melhor visibilidade */
+    padding: 0 0 0 20px;
+}
+
+.banner{
+    display: flex;
+    position: relative;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(to right, #FDCF00, #977C00);
+    border-radius: 5px;
+    font-family: "KoHo", sans-serif;
+    color: #FFFFFF;
+    font-size: 3vh;    
+}
+
+.form{
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Centralizar os inputs */
+    width: 70%;
+    height: 37vh;
+    font-family: "KoHo", sans-serif;
+}
+
+.telefones{
+    display: flex;
+    justify-content: space-between; /* Espaçar os inputs para as extremidades */
+    flex-direction: row;
+}
+
+#telefone{
+    width: 45%;
+}
+#flamingos {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ul {
+    background-color: white;
+    font-size: 2vh;
+    border: 1px solid black;
+    list-style: none;
+    display: flex; /* Define o display como flex */
+    flex-direction: column;
+    padding: 0; /* Remove o padding padrão da lista */
+    margin: 0; /* Remove a margem padrão da lista */
+    border: 1px solid #3C98A4;
+    overflow-y: auto;
+    max-height: 10vh;
+}
+
+.dia{
+    position: relative;
+    background-color:#3C98A4;
+    border: none;
+    width: 18%;
+    color: white;
+    border-radius: 5px;
+    height: auto;
+}
+
+.dia2{
+    position: relative;
+    background-color:#3C98A4;
+    border: none;
+    width: 20%;
+    color: white;
+    border-radius: 5px;
+    height: auto;
+}
+
+.diassemana{
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.diassemana2{
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cpf{
+    background-color: #3C98A4;
+    color: white;
+    width: 98%;
+    height: 3vh;
+    border: none;
+    margin-top: 1vh;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"],input[type="tel"],input[type="password"]{
+    background-color: #3C98A4;
+    color: white;
+    width: 98%;
+    height: 3vh;
+    border: none;
+    margin-top: 1vh;
+    border-radius: 5px;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Isso já centraliza os elementos em lados opostos */
+    width: 100%; /* Garante que o contêiner ocupe toda a largura da tela */
+}
+
+input[type="submit"], .voltar {
+    background-color: #3C98A4;
+    color: white;
+    width: 13vh;
+    height: 3vh;
+    border: none;
+    border-radius: 5px;
+    align-self: center; /* Alinha verticalmente no centro */
+}
+
+/* Removendo margens desnecessárias */
+input[type="submit"] {
+    margin: 0; /* Remove margens, se houver */
+}
+
+.voltar {
+    margin: 0; /* Remove margens, se houver */
+}
+
+
+::placeholder{
+    color: white;
+    font-family: "KoHo", sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+select option:disabled {
+    color: white; /* Cor do texto para a opção desabilitada */
+    background-color: #3C98A4; /* Para garantir que a cor de fundo do select não mude */
+}
+
+.fotonome{
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+#nomecompleto{
+    position: relative;
+    display: flex;
+    bottom: 0;
+    line
+}
+.mudasenha{
+    background-color: #3C98A4;
+    color: white;
+    width: 50%;
+    text-align: left;
+    height: 3vh;
+    border: none;
+    margin-top: 1vh;
+    border-radius: 5px;
+}
+
+.alinhabotao{
+    display: flex;
+    justify-content: space-between; /* Espaçar os inputs para as extremidades */
+    flex-direction: row;
+}
+
+.password-input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    border: 1px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #3C98A4;
+    color: #977C00;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.inputs{
+    background-color: white;
+}
+
+.borda{
+    padding: 20px;
+    background-color:#3C98A4;
+}
+
+button{
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.clicked {
+    background-color: #1d4b52; /* Darker color when clicked */
+}
