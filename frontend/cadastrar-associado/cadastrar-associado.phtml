@@ -39,7 +39,8 @@
                     <input type="text" name="NM_ASSOCIADO" placeholder="Nome do Associado" required>
                     <input type="text" name="NM_RESPONSAVEL_ASSOCIADO" placeholder="Nome do Responsável" required>
                     <input type="text" name="CPF" placeholder="CPF" maxlength="14" required>
-                    <input type="text" name="DT_NASCIMENTO" placeholder="Data de Nascimento (Dia/Mês/Ano)" maxlength="10" required>
+                    <label for="DT_NASCIMENTO" style="color: #3C98A4;"><b>Data de nascimento:</b></label><br>
+                    <input type="date" id="DT_NASCIMENTO" name="DT_NASCIMENTO"  style="color: white;" required>
                     <div class="telefones">
                         <input type="tel" name="TELEFONE01" placeholder="Telefone 1" maxlength="15" required>
                         <input type="tel" name="TELEFONE02" placeholder="Telefone 2" maxlength="15">
@@ -51,7 +52,7 @@
                     <div class="atividades">
                         Atividades: 
                         <br>
-                        <select name="ATIVIDADE" required>
+                        <!-- <select name="ATIVIDADE" required>
                             <option disabled selected>Atividades</option>
                             <option value="bale">Balé</option>
                             <option value="capoeira">Capoeira</option>
@@ -62,7 +63,7 @@
                             <option value="pedagogia">Pedagogia</option>
                             <option value="psico">Psicologia</option>
                             <option value="musica">Musicalização</option>
-                        </select>                        
+                        </select>                         -->
                     </div>
                 </div>
                 <br>

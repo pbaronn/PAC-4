@@ -39,7 +39,8 @@
                     <input type="text" name="NM_ASSOCIADO" placeholder="Nome do Associado" required>
                     <input type="text" name="NM_RESPONSAVEL_ASSOCIADO" placeholder="Nome do Responsável" required>
                     <input type="text" name="CPF" placeholder="CPF" maxlength="14" required>
-                    <input type="text" name="DT_NASCIMENTO" placeholder="Data de Nascimento (Dia/Mês/Ano)" maxlength="10" required>
+                    <label for="DT_NASCIMENTO" style="color: #3C98A4;"><b>Data de nascimento:</b></label><br>
+                    <input type="date" id="DT_NASCIMENTO" name="DT_NASCIMENTO"  style="color: white;" required>
                     <div class="telefones">
                         <input type="tel" name="TELEFONE01" placeholder="Telefone 1" maxlength="15" required>
                         <input type="tel" name="TELEFONE02" placeholder="Telefone 2" maxlength="15">
@@ -47,8 +48,9 @@
                     <input type="text" name="CEP" placeholder="Cep" required>
                     <input type="text" name="BAIRRO" placeholder="Bairro" required>
                     <input type="text" name="RUA" placeholder="Rua" required>
-                    <br><br>
-                    <div class="atividades">
+                    <br>
+                    <br>
+                    <!-- <div class="atividades">
                         Atividades: 
                         <br>
                         <select name="ATIVIDADE" required>
@@ -63,7 +65,7 @@
                             <option value="psico">Psicologia</option>
                             <option value="musica">Musicalização</option>
                         </select>                        
-                    </div>
+                    </div> -->
                 </div>
                 <br>
                 <div class="opcoes">
@@ -155,6 +157,35 @@
             selectedList.appendChild(listItem);
         });
     }
+
+    document.getElementById('meuFormulario').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+    // Cria um objeto com os dados do formulário
+    const formData = new FormData(this);
+
+    // Envia os dados usando fetch
+    fetch('../../backend/insere_associados.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Exibe o popup com a mensagem
+        alert(data.message);
+
+        // Redireciona para a URL de listagem, se a inserção foi bem-sucedida
+        if (data.success) {
+            window.location.href = data.redirect;
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao enviar o formulário:', error);
+        alert('Erro ao processar a solicitação. Tente novamente.');
+    });
+});
+
+
 </script>
 
 </html>

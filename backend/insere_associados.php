@@ -19,12 +19,10 @@ $responsavel = $_POST['NM_RESPONSAVEL_ASSOCIADO'];
 $cpf = $_POST['CPF'];
 $nascimento = $_POST['DT_NASCIMENTO'];
 $telefone1 = $_POST['TELEFONE01'];
-$telefone2 = $_POST['TELEFONE02'] ?? null;
+$telefone2 = $_POST['TELEFONE02'];
 $cep = $_POST['CEP'];
 $bairro = $_POST['BAIRRO'];
-$rua = $_POST['RUA'];
-$atividade = $_POST['ATIVIDADE'];
-$snadmin = $_POST['sn_admin'];
+$rua = $_POST['RUA'];   
 
 // Montando a query de inserção
 $sql = "INSERT INTO user (NM_ASSOCIADO,
@@ -35,15 +33,20 @@ $sql = "INSERT INTO user (NM_ASSOCIADO,
                           TELEFONE02,
                           CEP,
                           BAIRRO,
-                          RUA,
-                          ATIVIDADE,
-                          sn_admin)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                          RUA)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Preparando a query
 $stmt = $conn->prepare($sql);
+
+// Verifica se a preparação foi bem-sucedida
+if (!$stmt) {
+    die("Erro ao preparar a query: " . $conn->error);
+}
+
+// Vinculando os parâmetros à query preparada
 $stmt->bind_param(
-    "TESTE",
+    'sssssssss', // String de tipos: 9 parâmetros, todos como string
     $nome_completo,
     $responsavel,
     $cpf,
@@ -52,9 +55,7 @@ $stmt->bind_param(
     $telefone2,
     $cep,
     $bairro,
-    $rua,
-    $atividade,
-    $snadmin
+    $rua
 );
 
 // Executando a query
