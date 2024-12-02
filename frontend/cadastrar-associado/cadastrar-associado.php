@@ -1,3 +1,5 @@
+// <?php include '../../backend/verifica_sessao.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +25,7 @@
             <a href="../home/home.html">
             <img src="../../img/logo.png" id="logo">
             </a>
-            <a href="../login/login.html">
+            <a href="../login/login.php">
                 <div class="sair-container">
                     <img src="../../img/sair.png" id="sair" alt="Sair">
                     <span class="sair-text">Sair</span>
@@ -48,12 +50,11 @@
                     <input type="text" name="CEP" placeholder="Cep" required>
                     <input type="text" name="BAIRRO" placeholder="Bairro" required>
                     <input type="text" name="RUA" placeholder="Rua" required>
-                    <br>
-                    <br>
-                    <!-- <div class="atividades">
-                        Atividades: 
+                    <input type="password" name="SENHA" placeholder="Senha" required>
+                    <div class="atividades">
+                        <!-- Atividades:  -->
                         <br>
-                        <select name="ATIVIDADE" required>
+                        <!-- <select name="ATIVIDADE" required>
                             <option disabled selected>Atividades</option>
                             <option value="bale">Balé</option>
                             <option value="capoeira">Capoeira</option>
@@ -64,8 +65,8 @@
                             <option value="pedagogia">Pedagogia</option>
                             <option value="psico">Psicologia</option>
                             <option value="musica">Musicalização</option>
-                        </select>                        
-                    </div> -->
+                        </select>                         -->
+                    </div>
                 </div>
                 <br>
                 <div class="opcoes">
@@ -157,35 +158,6 @@
             selectedList.appendChild(listItem);
         });
     }
-
-    document.getElementById('meuFormulario').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
-
-    // Cria um objeto com os dados do formulário
-    const formData = new FormData(this);
-
-    // Envia os dados usando fetch
-    fetch('../../backend/insere_associados.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Exibe o popup com a mensagem
-        alert(data.message);
-
-        // Redireciona para a URL de listagem, se a inserção foi bem-sucedida
-        if (data.success) {
-            window.location.href = data.redirect;
-        }
-    })
-    .catch(error => {
-        console.error('Erro ao enviar o formulário:', error);
-        alert('Erro ao processar a solicitação. Tente novamente.');
-    });
-});
-
-
 </script>
 
 </html>

@@ -37,7 +37,7 @@ $result = $conn->query($sql);
             <a href="../home/home.html">
                 <img src="../../img/logo.png" id="logo">
             </a>
-            <a href="../login/login.html">
+            <a href="../login/login.php">
                 <div class="sair-container">
                     <img src="../../img/sair.png" id="sair" alt="Sair">
                     <span class="sair-text">Sair</span>

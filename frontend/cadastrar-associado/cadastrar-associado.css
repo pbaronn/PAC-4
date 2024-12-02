@@ -205,7 +205,7 @@ ul {
 }
 
 
-input[type="text"],input[type="tel"]{
+input[type="text"],input[type="tel"],input[type="password"]{
     background-color: #3C98A4;
     color: white;
     width: 98%;

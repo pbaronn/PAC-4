@@ -23,6 +23,7 @@ $telefone2 = $_POST['TELEFONE02'];
 $cep = $_POST['CEP'];
 $bairro = $_POST['BAIRRO'];
 $rua = $_POST['RUA'];   
+$senha = $_POST['SENHA'];   
 
 // Montando a query de inserção
 $sql = "INSERT INTO user (NM_ASSOCIADO,
@@ -33,8 +34,10 @@ $sql = "INSERT INTO user (NM_ASSOCIADO,
                           TELEFONE02,
                           CEP,
                           BAIRRO,
-                          RUA)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                          RUA,
+                          SENHA
+                          )
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
 // Preparando a query
 $stmt = $conn->prepare($sql);
@@ -46,7 +49,7 @@ if (!$stmt) {
 
 // Vinculando os parâmetros à query preparada
 $stmt->bind_param(
-    'sssssssss', // String de tipos: 9 parâmetros, todos como string
+    'ssssssssss', // String de tipos: 9 parâmetros, todos como string
     $nome_completo,
     $responsavel,
     $cpf,
@@ -55,7 +58,8 @@ $stmt->bind_param(
     $telefone2,
     $cep,
     $bairro,
-    $rua
+    $rua,
+    $senha
 );
 
 // Executando a query

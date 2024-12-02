@@ -1,3 +1,5 @@
+<?php include '../path/to/verifica_sessao.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +25,7 @@
             <a href="../home/home.html">
             <img src="../../img/logo.png" id="logo">
             </a>
-            <a href="../login/login.html">
+            <a href="../login/login.php">
                 <div class="sair-container">
                     <img src="../../img/sair.png" id="sair" alt="Sair">
                     <span class="sair-text">Sair</span>
@@ -48,9 +50,9 @@
                     <input type="text" name="CEP" placeholder="Cep" required>
                     <input type="text" name="BAIRRO" placeholder="Bairro" required>
                     <input type="text" name="RUA" placeholder="Rua" required>
-                    <br><br>
+                    <input type="password" name="SENHA" placeholder="Senha" required>
                     <div class="atividades">
-                        Atividades: 
+                        <!-- Atividades:  -->
                         <br>
                         <!-- <select name="ATIVIDADE" required>
                             <option disabled selected>Atividades</option>
