@@ -28,8 +28,8 @@
             <div class="inputs">
               <img src="../../img/usuario.png" class="foto-perfil">
               <div class="dados">
-                <span class="nome">Nome Completo</span>
-                <span class="cargo">Cargo</span>
+                <span class="nome"><?= htmlspecialchars($_SESSION['user_data']['NM_ASSOCIADO']) ?></span>
+                <span class="cargo"><?= htmlspecialchars($_SESSION['user_data']['CARGO']) ?></span>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
             <div class="tela" id="associados" onclick="window.location='../opcoes-associados/opcoes-associados.html'" id="associados">Associados <img src="../../img/associados.png"></div>
             <div class="tela" id="atividades" onclick="window.location='../opcoes-atividades/opcoes-atividades.html'" id="Atividades">Atividades <img src="../../img/atividades.png"></div>
             <div class="tela" id="lista" href="" id="lista" onclick="window.location='../presenca/presenca.html'">Lista de presença<img src="../../img/lista.png"></div>
-            <div class="tela" id="configuracoes" onclick="window.location='../configuracoes-conta/configuracoes-conta.html'" id="configuracoes">Configurações da conta <img src="../../img/configuracoes.png"></div>
+            <div class="tela" id="configuracoes" onclick="window.location='../configuracoes-conta/configuracoes-conta.php'" id="configuracoes">Configurações da conta <img src="../../img/configuracoes.png"></div>
         </div>
 
         <footer class="footer"></footer>

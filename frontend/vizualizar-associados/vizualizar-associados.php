@@ -34,7 +34,7 @@ $result = $conn->query($sql);
 <body>
     <div class="fundo">
         <header class="header">
-            <a href="../home/home.html">
+            <a href="../home/home.php">
                 <img src="../../img/logo.png" id="logo">
             </a>
             <a href="../login/login.php">
@@ -65,7 +65,7 @@ $result = $conn->query($sql);
                 </div>
                 <br><br>
                 <div class="opcoes">
-                    <a href="../home/home.html">
+                    <a href="../home/home.php">
                         <div class="Voltar">Voltar</div>
                     </a>
                 </div>
