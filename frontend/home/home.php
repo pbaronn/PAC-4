@@ -1,6 +1,5 @@
 <?php include '../../backend/verifica_sessao.php'; ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,12 +34,23 @@
           </div>
           
 
-        <div class="telas" align="center">
-            <div class="tela" id="associados" onclick="window.location='../opcoes-associados/opcoes-associados.html'" id="associados">Associados <img src="../../img/associados.png"></div>
-            <div class="tela" id="atividades" onclick="window.location='../opcoes-atividades/opcoes-atividades.html'" id="Atividades">Atividades <img src="../../img/atividades.png"></div>
-            <div class="tela" id="lista" href="" id="lista" onclick="window.location='../presenca/presenca.html'">Lista de presença<img src="../../img/lista.png"></div>
-            <div class="tela" id="configuracoes" onclick="window.location='../configuracoes-conta/configuracoes-conta.php'" id="configuracoes">Configurações da conta <img src="../../img/configuracoes.png"></div>
+          <div class="telas" align="center">
+        <!-- Apenas para usuários com SN_ADMIN = 1 -->
+        <?php if ($_SESSION['is_admin'] == 1): ?>
+            <div class="tela" id="associados" onclick="window.location='../opcoes-associados/opcoes-associados.html'">Associados 
+                <img src="../../img/associados.png">
+            </div>
+            <div class="tela" id="lista" onclick="window.location='../presenca/presenca.html'">Lista de presença
+                <img src="../../img/lista.png">
+            </div>
+        <?php endif; ?>
+        <div class="tela" id="atividades" onclick="window.location='../opcoes-atividades/opcoes-atividades.php'">Atividades 
+            <img src="../../img/atividades.png">
         </div>
+        <div class="tela" id="configuracoes" onclick="window.location='../configuracoes-conta/configuracoes-conta.php'">Configurações da conta 
+            <img src="../../img/configuracoes.png">
+        </div>
+    </div>
 
         <footer class="footer"></footer>
     </div>
