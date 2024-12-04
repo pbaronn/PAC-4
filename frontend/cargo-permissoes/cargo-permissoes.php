@@ -1,4 +1,57 @@
-<?php include '../../backend/verifica_sessao.php'; ?>
+<?php include '../../backend/conecta.php'; 
+
+
+// Inicia a sessão
+session_start();
+
+// Verifique se o usuário está logado e tem permissão para acessar esta página
+if (!isset($_SESSION['user_data'])) {
+    header('Location: ../login/login.php');
+    exit();
+}
+
+// Consultando todos os usuários da tabela "user"
+$query = "SELECT cduser, NM_ASSOCIADO FROM user";
+$result = mysqli_query($conn, $query);
+
+// Verificando se a consulta foi bem-sucedida
+if (!$result) {
+    die("Erro na consulta: " . mysqli_error($conn));
+}
+
+// Consultando todos os usuários da tabela "user"
+$query = "SELECT cduser, NM_ASSOCIADO FROM user";
+$result = mysqli_query($conn, $query);
+
+// Verificando se a consulta foi bem-sucedida
+if (!$result) {
+    die("Erro na consulta: " . mysqli_error($conn));
+}
+
+// Processando o envio do formulário
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $cduser = $_POST['cduser']; // ID do usuário
+    $cargo = $_POST['CARGO']; // Cargo selecionado
+    $sn_admin = ($cargo == 'Administrador') ? 1 : 0; // Define 1 para Administrador e 0 para Aluno
+
+    // Atualizando o cargo e o campo sn_admin
+    $update_query = "UPDATE user SET CARGO = ?, SN_ADMIN = ? WHERE cduser = ?";
+    $stmt = mysqli_prepare($conn, $update_query);
+    mysqli_stmt_bind_param($stmt, 'sii', $cargo, $sn_admin, $cduser);
+
+    // Executa a consulta de atualização
+    if (mysqli_stmt_execute($stmt)) {
+        $_SESSION['message'] = "Cargo atualizado com sucesso!";
+        header('Location: cargo-permissoes.php'); // Redireciona de volta para a página
+        exit();
+    } else {
+        $_SESSION['error'] = "Erro ao atualizar cargo.";
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,45 +87,34 @@
         </header>
 
         <div class="telas" align="center">
-            <div class="banner" id="banner"><b>Configurações da Conta</b></div>
-            <form id="meuFormulario" class="form" method="post" action="../../backend/processa_alteracao.php">
+            <div class="banner" id="banner"><b>Cargos</b></div>
+            <form id="meuFormulario" class="form" method="post" action="cargo-permissoes.php">
     <div class="inputs">
-        <div class="fotonome">
-            <img src="../../img/logo2.png" class="foto-perfil">
-            <input type="text" class="nomecompleto" placeholder="Nome Completo" id="nomecompleto" name="NM_ASSOCIADO"
-                value="<?= htmlspecialchars($_SESSION['user_data']['NM_ASSOCIADO']) ?>">
-        </div>
-        <div class="telefones">
-            <input type="tel" id="telefone1" class="input-padrao" required placeholder="Telefone 1"
-                name="TELEFONE01" onkeypress="formatar('(##) #####-####', this)" maxlength="15"
-                value="<?= htmlspecialchars($_SESSION['user_data']['TELEFONE01']) ?>">
-            <input type="tel" id="telefone2" class="input-padrao" placeholder="Telefone 2" name="TELEFONE02"
-                onkeypress="formatar('(##) #####-####', this)" maxlength="15"
-                value="<?= htmlspecialchars($_SESSION['user_data']['TELEFONE02']) ?>">
-        </div>
-        <input type="text" class="cpf" placeholder="CPF" name="CPF" maxlength="14"
-            onkeypress="formatar('###.###.###-##', this)"
-            value="<?= htmlspecialchars($_SESSION['user_data']['CPF']) ?>">
-        <input type="text" id="cep" name="CEP" placeholder="CEP" value="<?= htmlspecialchars($_SESSION['user_data']['CEP']) ?>">
-        <input type="text" id="bairro" name="BAIRRO" placeholder="Bairro"
-            value="<?= htmlspecialchars($_SESSION['user_data']['BAIRRO']) ?>">
-        <input type="text" id="rua" name="RUA" placeholder="Rua" value="<?= htmlspecialchars($_SESSION['user_data']['RUA']) ?>">
+
+        <label for="cduser">Selecione o Usuário:</label><br>
+        <select name="cduser" class="cduser" id="cduser" required>
+            <?php while ($user = mysqli_fetch_assoc($result)): ?>
+                <option value="<?= $user['cduser'] ?>" <?= ($_SESSION['user_data']['cduser'] == $user['cduser']) ? 'selected' : ''; ?>>
+                    <?= htmlspecialchars($user['NM_ASSOCIADO']) ?>
+                </option>
+            <?php endwhile; ?>
+        </select>
+        <br>
+        <label for="cargo">Selecione o novo cargo:</label><br>
+        <select class="cargo" name="CARGO" id="cargo">
+            <option value="Aluno" <?= ($_SESSION['user_data']['CARGO'] == 'Aluno') ? 'selected' : ''; ?>>Aluno</option>
+            <option value="Administrador" <?= ($_SESSION['user_data']['CARGO'] == 'Administrador') ? 'selected' : ''; ?>>Administrador</option>
+        </select>
+
         <div class="alinhabotao">
-            <button type="button" class="mudasenha" onclick="mostrarCamposSenha()">Alterar Senha</button>
             <div class="fantasma"></div>
         </div>
-        <br>
-        <div id="password-fields" style="display: none;">
-            <input type="password" placeholder="Senha Atual" class="password-input" name="senha_atual" id="senhaAtual">
-            <input type="password" placeholder="Nova Senha" class="password-input" name="nova_senha" id="novaSenha">
-            <input type="password" placeholder="Confirmar Nova Senha" class="password-input" name="confirma_senha"
-                id="confirmaSenha">
-        </div>
-        <br>
+
+        <br><br>
     </div>
-    <br>
+
     <div class="opcoes">
-        <a href="../home/home.php">
+        <a href="../opcoes-associados/opcoes-associados.html">
             <div class="Voltar">Voltar</div>
         </a>
         <input type="submit" value="Salvar" onclick="return validarSenhas()">
@@ -125,34 +167,6 @@
                 return true; // Permite o envio do formulário se tudo estiver correto
             }
 
-document.getElementById("meuFormulario").onsubmit = function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-
-    const formData = new FormData(this);
-
-    fetch("../../backend/processa_alteracao.php", {
-        method: "POST",
-        body: formData,
-    })
-    .then(response => {
-        // Verifica se o status da resposta é OK
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.success) {
-            abrirModal(); // Abre a modal de sucesso
-        } else {
-            alert(data.message); // Exibe a mensagem de erro
-        }
-    })
-    .catch(error => {
-        console.error("Erro na requisição:", error.message);
-        alert("Dados alterados com Sucesso!");
-    });
-};
 
 
 function abrirModal() {

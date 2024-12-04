@@ -82,12 +82,14 @@ footer {
     height: 15vh;
     width: 100%;
 }
-
 .inputs {
     position: relative;
     gap: 2vh;
     top: 0;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
+
 
 .body-container {
     display: flex; /* Ativa Flexbox no container */
@@ -154,7 +156,7 @@ h1{
     justify-content: center; /* Centraliza horizontalmente */
     width: 100%;
     height: 10vh;
-    background-color: #424F77;
+    background: linear-gradient(to right, #FDCF00, #977C00);
     border-radius: 5px;
     font-family: "KoHo", sans-serif;
     color: #FFFFFF;
@@ -202,6 +204,53 @@ ul {
     max-height: 10vh;
 }
 
+.dia{
+    position: relative;
+    background-color:#3C98A4;
+    border: none;
+    width: 18%;
+    color: white;
+    border-radius: 5px;
+    height: auto;
+}
+
+.dia2{
+    position: relative;
+    background-color:#3C98A4;
+    border: none;
+    width: 20%;
+    color: white;
+    border-radius: 5px;
+    height: auto;
+}
+
+.diassemana{
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.diassemana2{
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cpf{
+    background-color: #3C98A4;
+    color: white;
+    width: 98%;
+    height: 3vh;
+    border: none;
+    margin-top: 1vh;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
 
 input[type="text"],input[type="tel"],input[type="password"]{
     background-color: #3C98A4;
@@ -254,67 +303,6 @@ select option:disabled {
     background-color: #3C98A4; /* Para garantir que a cor de fundo do select não mude */
 }
 
-/* Estilo para o select */
-select.cargo {
-    background-color: #3C98A4; /* Cor de fundo do select */
-    color: white; /* Cor do texto */
-    padding: 10px; /* Espaçamento interno */
-    border: 2px solid #2a7b88; /* Cor da borda */
-    border-radius: 5px; /* Borda arredondada */
-    font-size: 16px; /* Tamanho da fonte */
-    font-family: Arial, sans-serif; /* Fonte */
-    width: 100%; /* Largura do select */
-}
-
-/* Estilo para as opções dentro do select */
-select.cargo option {
-    background-color: #3C98A4; /* Cor de fundo das opções */
-    color: white; /* Cor do texto das opções */
-    padding: 10px; /* Espaçamento interno das opções */
-}
-
-/* Estilo para a opção selecionada */
-select.cargo option:checked {
-    background-color: #2a7b88; /* Cor de fundo da opção selecionada */
-}
-
-/* Estilo para a opção desabilitada */
-select.cargo option:disabled {
-    background-color: #B0BEC5; /* Cor de fundo da opção desabilitada */
-    color: #7F8C8D; /* Cor do texto da opção desabilitada */
-}
-
-/* Estilo para o select */
-select.cduser {
-    background-color: #3C98A4; /* Cor de fundo do select */
-    color: white; /* Cor do texto */
-    padding: 10px; /* Espaçamento interno */
-    border: 2px solid #2a7b88; /* Cor da borda */
-    border-radius: 5px; /* Borda arredondada */
-    font-size: 16px; /* Tamanho da fonte */
-    font-family: Arial, sans-serif; /* Fonte */
-    width: 100%; /* Largura do select */
-}
-
-/* Estilo para as opções dentro do select */
-select.cduser option {
-    background-color: #3C98A4; /* Cor de fundo das opções */
-    color: white; /* Cor do texto das opções */
-    padding: 10px; /* Espaçamento interno das opções */
-}
-
-/* Estilo para a opção selecionada */
-select.cduser option:checked {
-    background-color: #2a7b88; /* Cor de fundo da opção selecionada */
-}
-
-/* Estilo para a opção desabilitada */
-select.cduser option:disabled {
-    background-color: #B0BEC5; /* Cor de fundo da opção desabilitada */
-    color: #7F8C8D; /* Cor do texto da opção desabilitada */
-}
-
-
 .fotonome{
     display: flex;
     flex-direction: row;
@@ -325,10 +313,7 @@ select.cduser option:disabled {
     position: relative;
     display: flex;
     bottom: 0;
-    background-color: #3C98A4;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
+    line
 }
 .mudasenha{
     background-color: #3C98A4;
@@ -364,13 +349,15 @@ select.cduser option:disabled {
     top: 0;
     width: 100%;
     height: 20%;
+    border: 1px;
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #3C98A4;
+    color: #977C00;
     width: 300px;
     text-align: center;
 }
@@ -381,4 +368,22 @@ select.cduser option:disabled {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.inputs{
+    background-color: white;
+}
+
+.borda{
+    padding: 20px;
+    background-color:#3C98A4;
+}
+
+button{
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.clicked {
+    background-color: #1d4b52; /* Darker color when clicked */
 }

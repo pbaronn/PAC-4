@@ -8,7 +8,6 @@ include 'conecta.php';
 
 $cduser = $_SESSION['cduser'];
 $nomeCompleto = $_POST['NM_ASSOCIADO'];
-$cargo = $_POST['CARGO'];
 $telefone1 = $_POST['TELEFONE01'];
 $telefone2 = $_POST['TELEFONE02'];
 $cpf = $_POST['CPF'];
@@ -50,9 +49,9 @@ if (!empty($senhaAtual) || !empty($novaSenha) || !empty($confirmaSenha)) {
 }
 
 // Atualiza os demais dados
-$query = "UPDATE user SET NM_ASSOCIADO = ?, CARGO = ?, TELEFONE01 = ?, TELEFONE02 = ?, CPF = ?, CEP = ?, BAIRRO = ?, RUA = ? WHERE cduser = ?";
+$query = "UPDATE user SET NM_ASSOCIADO = ?, TELEFONE01 = ?, TELEFONE02 = ?, CPF = ?, CEP = ?, BAIRRO = ?, RUA = ? WHERE cduser = ?";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("ssssssssi", $nomeCompleto, $cargo, $telefone1, $telefone2, $cpf, $cep, $bairro, $rua, $cduser);
+$stmt->bind_param("sssssssi", $nomeCompleto, $telefone1, $telefone2, $cpf, $cep, $bairro, $rua, $cduser);
 
 if ($stmt->execute()) {
     echo json_encode(["success" => true, "message" => "Dados alterados com sucesso."]);

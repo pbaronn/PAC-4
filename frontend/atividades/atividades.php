@@ -1,4 +1,4 @@
-<?php include '../../backend/verifica_sessao.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 </head>
-<link rel="stylesheet" type="text/css" href="../configuracoes-conta/configuracoes-conta.css">
+<link rel="stylesheet" type="text/css" href="../atividades/atividades.css">
 
 <body>
     <div class="fundo">
@@ -34,48 +34,55 @@
         </header>
 
         <div class="telas" align="center">
-            <div class="banner" id="banner"><b>Configurações da Conta</b></div>
-            <form id="meuFormulario" class="form" method="post" action="../../backend/processa_alteracao.php">
-    <div class="inputs">
-        <div class="fotonome">
-            <img src="../../img/logo2.png" class="foto-perfil">
-            <input type="text" class="nomecompleto" placeholder="Nome Completo" id="nomecompleto" name="NM_ASSOCIADO"
-                value="<?= htmlspecialchars($_SESSION['user_data']['NM_ASSOCIADO']) ?>">
+            <div class="banner" id="banner"><b>Cadastrar Atividade</b></div>
+            <form id="meuFormulario" onsubmit="return false;" class="form" method="POST" action="processa_formulario.php">
+    <div class="borda">    
+        <div class="inputs">
+            <input type="text" name="nome_atividade" class="nomeatividade" placeholder="Nome da Atividade" required>
+            <input type="text" name="profissional" class="profissional" placeholder="Profissional" required>
+            
+            <div class="cpf">Dias de Atividade</div>
+            <div class="diassemana">
+                <label><input type="checkbox" name="dias_atividade[]" value="Seg"> Seg</label>
+                <label><input type="checkbox" name="dias_atividade[]" value="Ter"> Ter</label>
+                <label><input type="checkbox" name="dias_atividade[]" value="Qua"> Qua</label>
+                <label><input type="checkbox" name="dias_atividade[]" value="Qui"> Qui</label>
+                <label><input type="checkbox" name="dias_atividade[]" value="Sex"> Sex</label>
+            </div>
+
+            <div class="cpf">Horários</div>
+            <div class="diassemana2">
+                <label><input type="checkbox" name="horarios[]" value="08:00"> 08:00</label>
+                <label><input type="checkbox" name="horarios[]" value="09:00"> 09:00</label>
+                <label><input type="checkbox" name="horarios[]" value="10:00"> 10:00</label>
+                <label><input type="checkbox" name="horarios[]" value="11:00"> 11:00</label>
+                <label><input type="checkbox" name="horarios[]" value="12:00"> 12:00</label>
+                <label><input type="checkbox" name="horarios[]" value="14:00"> 14:00</label>
+                <label><input type="checkbox" name="horarios[]" value="15:00"> 15:00</label>
+                <label><input type="checkbox" name="horarios[]" value="16:00"> 16:00</label>
+                <label><input type="checkbox" name="horarios[]" value="17:00"> 17:00</label>
+                <label><input type="checkbox" name="horarios[]" value="18:00"> 18:00</label>
+            </div>
+
+            <div class="cpf">Número de Vagas</div>
+            <select name="numero_vagas" id="flamingos" class="ui scrolling dropdown" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
         </div>
-        <div class="telefones">
-            <input type="tel" id="telefone1" class="input-padrao" required placeholder="Telefone 1"
-                name="TELEFONE01" onkeypress="formatar('(##) #####-####', this)" maxlength="15"
-                value="<?= htmlspecialchars($_SESSION['user_data']['TELEFONE01']) ?>">
-            <input type="tel" id="telefone2" class="input-padrao" placeholder="Telefone 2" name="TELEFONE02"
-                onkeypress="formatar('(##) #####-####', this)" maxlength="15"
-                value="<?= htmlspecialchars($_SESSION['user_data']['TELEFONE02']) ?>">
-        </div>
-        <input type="text" class="cpf" placeholder="CPF" name="CPF" maxlength="14"
-            onkeypress="formatar('###.###.###-##', this)"
-            value="<?= htmlspecialchars($_SESSION['user_data']['CPF']) ?>">
-        <input type="text" id="cep" name="CEP" placeholder="CEP" value="<?= htmlspecialchars($_SESSION['user_data']['CEP']) ?>">
-        <input type="text" id="bairro" name="BAIRRO" placeholder="Bairro"
-            value="<?= htmlspecialchars($_SESSION['user_data']['BAIRRO']) ?>">
-        <input type="text" id="rua" name="RUA" placeholder="Rua" value="<?= htmlspecialchars($_SESSION['user_data']['RUA']) ?>">
-        <div class="alinhabotao">
-            <button type="button" class="mudasenha" onclick="mostrarCamposSenha()">Alterar Senha</button>
-            <div class="fantasma"></div>
-        </div>
-        <br>
-        <div id="password-fields" style="display: none;">
-            <input type="password" placeholder="Senha Atual" class="password-input" name="senha_atual" id="senhaAtual">
-            <input type="password" placeholder="Nova Senha" class="password-input" name="nova_senha" id="novaSenha">
-            <input type="password" placeholder="Confirmar Nova Senha" class="password-input" name="confirma_senha"
-                id="confirmaSenha">
-        </div>
-        <br>
-    </div>
-    <br>
+    </div>    
     <div class="opcoes">
-        <a href="../home/home.php">
-            <div class="Voltar">Voltar</div>
-        </a>
-        <input type="submit" value="Salvar" onclick="return validarSenhas()">
+        <a href="../home/home.php"><div class="Voltar">Voltar</div></a>
+        <input type="submit" value="Salvar" id="submitButton">
     </div>
 </form>
 
@@ -83,7 +90,10 @@
 
         <!-- Modal de confirmação -->
         <div id="modal" class="modal">
-
+            <!-- <div class="modal-content">
+                <span class="close" id="fecharModal">&times;</span>
+                <b><p>Dados Alterados com Sucesso!</p></b>
+            </div> -->
         </div>
 
         <footer class="footer">
@@ -95,82 +105,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
    
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const selectVagas = document.getElementById("flamingos");
 
-        function mostrarCamposSenha() {
-                const camposSenha = document.getElementById("password-fields");
-                camposSenha.style.display = camposSenha.style.display === "none" ? "block" : "none";
-            }
-        
-            function validarSenhas() {
-                const senhaAtual = document.getElementById("senhaAtual").value;
-                const novaSenha = document.getElementById("novaSenha").value;
-                const confirmaSenha = document.getElementById("confirmaSenha").value;
-            
-                // Verifica se os campos de senha estão preenchidos
-                if (senhaAtual || novaSenha || confirmaSenha) {
-                    if (!senhaAtual) {
-                        alert("Por favor, insira sua senha atual.");
-                        return false;
-                    }
-                    if (novaSenha !== confirmaSenha) {
-                        alert("As novas senhas não coincidem.");
-                        return false;
-                    }
-                    if (novaSenha.length < 6) {
-                        alert("A nova senha deve ter pelo menos 6 caracteres.");
-                        return false;
-                    }
-                }
-            
-                return true; // Permite o envio do formulário se tudo estiver correto
-            }
-
-document.getElementById("meuFormulario").onsubmit = function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-
-    const formData = new FormData(this);
-
-    fetch("../../backend/processa_alteracao.php", {
-        method: "POST",
-        body: formData,
-    })
-    .then(response => {
-        // Verifica se o status da resposta é OK
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.success) {
-            abrirModal(); // Abre a modal de sucesso
-        } else {
-            alert(data.message); // Exibe a mensagem de erro
-        }
-    })
-    .catch(error => {
-        console.error("Erro na requisição:", error.message);
-        alert("Dados alterados com Sucesso!");
-    });
-};
-
-
-function abrirModal() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "flex"; // Exibe a modal
-}
-
-document.getElementById("fecharModal").onclick = function() {
-    document.getElementById("modal").style.display = "none";
-};
-
-window.onclick = function(event) {
-    const modal = document.getElementById("modal");
-    if (event.target === modal) {
-        modal.style.display = "none";
+    if (selectVagas) {
+        selectVagas.addEventListener("change", function() {
+            const vagasSelecionadas = this.value;
+            console.log("Número de vagas selecionado: " + vagasSelecionadas);
+            // Aqui você pode manipular o DOM, se necessário
+            // Exemplo: document.getElementById("outroElemento").innerHTML = vagasSelecionadas;
+        });
+    } else {
+        console.error("Elemento com ID 'flamingos' não encontrado.");
     }
-};
+});
 
+
+        // Função para abrir a modal
+        function abrirModal() {
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        // Fecha a modal quando o botão de fechar é clicado
+        document.getElementById("fecharModal").onclick = function() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // Fecha a modal se o usuário clicar fora dela
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modal")) {
+                document.getElementById("modal").style.display = "none";
+            }
+        }
+
+        // Intercepta o submit do formulário apenas quando o botão de submit é clicado
+        document.getElementById("submitButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            abrirModal(); // Abre a modal
+        });
+
+        // Se você precisar interceptar a submissão do formulário em si, para o caso de form submit via enter também
+        document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio real do formulário
+            abrirModal(); // Abre a modal
+        });
 
         // Função para mostrar campos de senha (opcional)
         function mostrarCamposSenha() {
@@ -283,6 +261,19 @@ window.onclick = function(event) {
             event.preventDefault(); // Impede o envio do formulário
             abrirModal(); // Abre a modal
         }
+
+  // Select all buttons with the class "myButton"
+  const buttons = document.querySelectorAll('.dia2');
+
+  // Add event listener to each button
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Toggle the 'clicked' class on the button when clicked
+      button.classList.toggle('clicked');
+    });
+  });
+
+
 </script>
 
 </html>

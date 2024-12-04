@@ -25,7 +25,7 @@ $bairro = $_POST['BAIRRO'];
 $rua = $_POST['RUA'];   
 $senha = $_POST['SENHA'];   
 
-// Montando a query de inserção
+// Montando a query de inserção (inserindo "Aluno" diretamente na query)
 $sql = "INSERT INTO user (NM_ASSOCIADO,
                           NM_RESPONSAVEL_ASSOCIADO,
                           CPF,
@@ -35,9 +35,10 @@ $sql = "INSERT INTO user (NM_ASSOCIADO,
                           CEP,
                           BAIRRO,
                           RUA,
-                          SENHA
+                          SENHA,
+                          CARGO
                           )
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Aluno')";  // 'Aluno' como valor fixo para CARGO
 
 // Preparando a query
 $stmt = $conn->prepare($sql);
@@ -49,7 +50,7 @@ if (!$stmt) {
 
 // Vinculando os parâmetros à query preparada
 $stmt->bind_param(
-    'ssssssssss', // String de tipos: 9 parâmetros, todos como string
+    'ssssssssss', // String de tipos: 10 parâmetros (todos como string, sem contar o 'Aluno' que já está fixo)
     $nome_completo,
     $responsavel,
     $cpf,

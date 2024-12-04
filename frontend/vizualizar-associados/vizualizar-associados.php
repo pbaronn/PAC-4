@@ -49,7 +49,13 @@ $result = $conn->query($sql);
             <div class="banner" id="banner"><b>Associados</b></div>
             <form id="meuFormulario" class="form">
                 <div class="inputs">
-                    <?php
+                <?php
+                    // Exemplo de consulta SQL para ordenar pelo campo NM_ASSOCIADO em ordem alfabética
+                    $sql = "SELECT * FROM user ORDER BY NM_ASSOCIADO ASC";
+
+                    // Execute a consulta
+                    $result = $conn->query($sql);
+
                     // Gera dinamicamente os itens com base nos usuários do banco de dados
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -65,7 +71,7 @@ $result = $conn->query($sql);
                 </div>
                 <br><br>
                 <div class="opcoes">
-                    <a href="../home/home.php">
+                    <a href="../opcoes-associados/opcoes-associados.html">
                         <div class="Voltar">Voltar</div>
                     </a>
                 </div>
