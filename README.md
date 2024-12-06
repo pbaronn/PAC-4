@@ -32,6 +32,43 @@ Requisitos para preparar o ambiente de desenvolvimento:
 
 Telas principais:
 
+Tela de Gerenciamento de Associados:
+
+![image](https://github.com/user-attachments/assets/bc6d0bb7-c3d1-4703-ba5d-d499191ef71b)
+
+Esta tela apresenta as três principais funções disponíveis para os associados: cadastrar, editar e visualizar.
+
+Tela de Visualização de Associado:
+
+![image](https://github.com/user-attachments/assets/1c49781e-1883-4b88-bd74-f3b60337947b)
+
+Esta tela apresenta a ficha completa do associado, disponível após o usuário escolher a opções de "visualizar associado". 
+
+Tela de Gerenciamento de Presença:
+
+![image](https://github.com/user-attachments/assets/c2c1916b-d3b3-4b09-aca0-e5e632615bc0)
+
+Esta tela apresenta a lista de associados referente à uma determinada atividade, além das opções de presença e ausência. 
+
+Tela de Cadastro de Atividade:
+
+![image](https://github.com/user-attachments/assets/069a252b-5c3c-4952-8282-5b9de77b80da)
+
+Esta tela apresenta as informações necessárias para se adicionar uma nova atividade. 
+
+Tela de Adição de Associado:
+
+![image](https://github.com/user-attachments/assets/2f554deb-423c-4f79-bb95-af763cc0d830)
+
+Esta tela apresenta as informações disponíveis para se adicionar um novo associado.
+
+Tela de Gerenciamento de Atividades:
+
+![image](https://github.com/user-attachments/assets/6621e214-622a-4df4-8f10-94cafbce0c3a)
+
+Esta tela apresenta as duas principais funções disponíveis para as atividades: cadastrar e visualizar.
+
+
 
 Confluence:
 
