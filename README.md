@@ -34,7 +34,7 @@ Telas principais:
 
 Tela de Gerenciamento de Associados:
 
-![image](https://github.com/user-attachments/assets/bc6d0bb7-c3d1-4703-ba5d-d499191ef71b)
+![image](https://github.com/user-attachments/assets/37819a1e-809e-45dc-8348-6c9fbbdd6642)
 
 Esta tela apresenta as três principais funções disponíveis para os associados: cadastrar, editar e visualizar.
 
@@ -52,7 +52,7 @@ Esta tela apresenta a lista de associados referente à uma determinada atividade
 
 Tela de Cadastro de Atividade:
 
-![image](https://github.com/user-attachments/assets/069a252b-5c3c-4952-8282-5b9de77b80da)
+![image](https://github.com/user-attachments/assets/33e5fa35-892a-420a-b19f-467aeda62b3b)
 
 Esta tela apresenta as informações necessárias para se adicionar uma nova atividade. 
 
@@ -68,6 +68,11 @@ Tela de Gerenciamento de Atividades:
 
 Esta tela apresenta as duas principais funções disponíveis para as atividades: cadastrar e visualizar.
 
+Tela de Recuperação de Senha:
+
+![image](https://github.com/user-attachments/assets/05ec988f-14bc-405c-9233-d84a1b4903fb)
+
+Esta tela apresenta a funcionalidade de recuperação de senha, acessada através do botão "esqueci minha senha" presente na tela de login. 
 
 
 Confluence:
