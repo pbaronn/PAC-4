@@ -3,12 +3,12 @@ PAC - Projeto de Aprendizagem Colaborativa Extensionista do Curso de Engenharia 
 
 Justificativa:
 
-A criação do aplicativo móvel visa modernizar e otimizar a gestão das atividades realizadas pela ONG Universo Down, que visa o desenvolvimento e apoio a pessoas com a síndrome de Down, oferecendo uma solução digital centralizada que substitui os processos manuais e descentralizados atualmente utilizados. O principal objetivo do projeto é facilitar o controle de presenças dos associados nas atividades, promovendo maior organização e eficiência. 
+O projeto propõe o desenvolvimento de um aplicativo móvel destinado a modernizar e otimizar a gestão das atividades realizadas pela ONG Universo Down, que visa o desenvolvimento e suporte a pessoas com a síndrome de Down, oferecendo uma solução centralizada que substitui os processos manuais e descentralizados atualmente utilizados. O principal objetivo do projeto é facilitar o controle de presenças dos associados nas atividades, promovendo maior organização e eficiência. 
 
 
 Descrição do App:
 
-O aplicativo é uma plataforma móvel desenvolvida para auxiliar na gestão de atividades e associados da ONG. Ele conta com dois tipos de perfis de usuários: os administradores, que possuem a permissão pasra realizar edições, e os funcionáriso, que não possuem a permissão de edição, tendo acesso a apenas determinadas funcionalidades. 
+O aplicativo é uma plataforma móvel desenvolvida para auxiliar na gestão de atividades e associados da ONG. O objetivo do sistema é ser intuitivo, acessível e focado na usabilidade, e contempla dois tipos de perfis de usuários: os administradores, que possuem a permissão para realizar edições, e os funcionários, que não possuem a permissão de edição, tendo acesso a apenas determinadas funcionalidades. 
 
 Principais Funcionalidades:
 
@@ -23,6 +23,8 @@ Principais Funcionalidades:
   Funcionários: têm acesso à visualização de perfis de associados e atividades, ao registro de presenças e ao gerenciamento de sua conta. 
     
   Gerenciamento de conta: permite que os usuários visualizem e gerenciem seus dados pessoais. 
+
+  Registro de presença: acompanhamento da participação dos associados nas atividades que realizam. 
 
 
 Requisitos para preparar o ambiente de desenvolvimento:
