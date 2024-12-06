@@ -30,7 +30,7 @@ Principais Funcionalidades:
 
 
 
-Requisitos para preparar o ambiente de desenvolvimento:
+Requisitos para preparar o ambiente de desenvolvimento: Servidor Local e Códgigo Funcionando.
 
 
 
