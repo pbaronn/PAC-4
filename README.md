@@ -1,9 +1,11 @@
 # APLICATIVO DE CONTROLE DE PRESENÇA
 PAC - Projeto de Aprendizagem Colaborativa Extensionista do Curso de Engenharia de Software da Católica de Santa Catarina
 
+
 Justificativa:
 
 O projeto propõe o desenvolvimento de um aplicativo móvel destinado a modernizar e otimizar a gestão das atividades realizadas pela ONG Universo Down, que visa o desenvolvimento e suporte a pessoas com a síndrome de Down, oferecendo uma solução centralizada que substitui os processos manuais e descentralizados atualmente utilizados. O principal objetivo do projeto é facilitar o controle de presenças dos associados nas atividades, promovendo maior organização e eficiência. 
+
 
 
 Descrição do App:
@@ -27,7 +29,9 @@ Principais Funcionalidades:
   Registro de presença: acompanhamento da participação dos associados nas atividades que realizam. 
 
 
+
 Requisitos para preparar o ambiente de desenvolvimento:
+
 
 
 Telas principais:
@@ -75,9 +79,11 @@ Tela de Recuperação de Senha:
 Esta tela apresenta a funcionalidade de recuperação de senha, acessada através do botão "esqueci minha senha" presente na tela de login. 
 
 
+
 Confluence:
 
 https://gabetrembolado.atlassian.net/l/cp/684YQFqC
+
 
 
 Jira:
@@ -85,7 +91,9 @@ Jira:
 https://gabetrembolado.atlassian.net/jira/software/projects/PAC/boards/2/timeline?shared=&atlOrigin=eyJpIjoiNGEzZjg2YzUyZGFhNGNlMThmMWNlNTk2MjA0NWFjZWMiLCJwIjoiaiJ9
 
 
+
 Nomes:
+
 Dereck Conink
 
 Gabriel Henrique Ferreira
