@@ -8,21 +8,21 @@ A criação do aplicativo móvel visa modernizar e otimizar a gestão das ativid
 
 Descrição do App:
 
-O aplicativo é uma plataforma móvel projetada para auxiliar na gestão de atividades e associados. Possui dois tipos de usuários, os administradores, que possuem a permissão de edição, e os funcionário, que não possuem a permissão de edição. 
+O aplicativo é uma plataforma móvel desenvolvida para auxiliar na gestão de atividades e associados da ONG. Ele conta com dois tipos de perfis de usuários: os administradores, que possuem a permissão pasra realizar edições, e os funcionáriso, que não possuem a permissão de edição, tendo acesso a apenas determinadas funcionalidades. 
 
 Principais Funcionalidades:
 
-  Gestão de Associados: permite adicionar, editar e excluir informação dos associados, como nome, idade, contato, responsável, etc, além de ser possível a visualização da ficha completa também. 
+  Gestão de Associados: permite cadastrar, editar e excluir informações e/ou fichas dos associados, contando com informações como nome, idade, contato, responsável, etc. Além disso, possibilita a consulta da ficha completa de cada associado. 
   
-  Gestão de Atividades: permite visualizar, criar e gerenciar atividades, defininfo informações como nome, número de vagas, horários e o profissional responsável.
+  Gestão de Atividades: permite visualizar, criar e gerenciar atividades, defininfo detalhes como nome, número de vagas, horários e o profissional responsável.
   
-  Tipos de Usuários: 
+  Tipos de Usuários:  
   
-    Administradores: têm acesso total para criar, editar e excluir dados de associados, atividades e usuários. 
+  Administradores: têm acesso total para criar, editar e excluir dados e fichas de associados, atividades e usuários. 
+  
+  Funcionários: têm acesso à visualização de perfis de associados e atividades, ao registro de presenças e ao gerenciamento de sua conta. 
     
-    Funcionários: têm acesso à visualização de perfis de associados e atividades, ao registro de presenças e à gerenciamento de sua conta. 
-    
-  Gerenciamento de conta: permite visualizar e gerenciar dados pessoais. 
+  Gerenciamento de conta: permite que os usuários visualizem e gerenciem seus dados pessoais. 
 
 
 Requisitos para preparar o ambiente de desenvolvimento:
